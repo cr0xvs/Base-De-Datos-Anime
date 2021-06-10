@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -11,34 +13,62 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.anime.PrimaryController">
-   <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn prefWidth="135.0" text="Anime" />
-          <TableColumn prefWidth="102.0" text="Género" />
-            <TableColumn prefWidth="137.0" text="Estudio de Animación" />
-            <TableColumn prefWidth="74.0" text="Temporadas" />
-            <TableColumn prefWidth="58.0" text="Capítulos" />
-            <TableColumn prefWidth="93.0" text="Estado" />
-        </columns>
-      </TableView>
-   </center>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.agendamusica.PrimaryController">
    <top>
-      <HBox prefHeight="19.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#onActionButtonNuevo" text="Nuevo" />
-            <Button mnemonicParsing="false" text="Editar" />
-            <Button mnemonicParsing="false" text="Suprimir" />
+            <Button mnemonicParsing="false" onAction="#onActionButtonNuevo" text="Nuevo">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onActionButtonEditar" text="Editar">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onActionButtonSuprimir" text="Suprimir">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <TextField fx:id="textFieldBuscar">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#onActionButtonBuscar" text="Buscar">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <CheckBox fx:id="checkCoincide" mnemonicParsing="false">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+            </CheckBox>
          </children>
       </HBox>
    </top>
+   <center>
+      <TableView fx:id="tableViewMusica" prefHeight="208.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="columnNombre" prefWidth="161.0" text="Anime" />
+            <TableColumn fx:id="columnFechaLan" prefWidth="199.0" text="Estudio" />
+            <TableColumn fx:id="columnAlbúm" minWidth="0.0" prefWidth="85.0" text="Temporadas" />
+            <TableColumn prefWidth="70.0" text="Capítulos" />
+            <TableColumn prefWidth="84.0" text="Estado" />
+        </columns>
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+      </TableView>
+   </center>
    <bottom>
-      <GridPane prefHeight="90.0" prefWidth="580.0" BorderPane.alignment="CENTER">
+      <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="59.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="541.0" minWidth="10.0" prefWidth="541.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="454.0" minWidth="10.0" prefWidth="454.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="146.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -46,11 +76,23 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Anime:" />
-            <TextField prefHeight="25.0" prefWidth="349.0" GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label prefHeight="17.0" prefWidth="44.0" text="Estudio:" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="Guardar" GridPane.rowIndex="2" />
+            <Label text="Anime:">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="textFieldNombre" prefHeight="25.0" prefWidth="355.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="60.0" />
+               </GridPane.margin></TextField>
+            <Button mnemonicParsing="false" onAction="#onActionButtonGuardar" prefHeight="25.0" prefWidth="130.0" text="Guardar" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
          </children>
       </GridPane>
    </bottom>

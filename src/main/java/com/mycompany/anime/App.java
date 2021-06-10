@@ -23,6 +23,7 @@ import javax.persistence.PersistenceException;
 public class App extends Application {
 
     private static Scene scene;
+    //Variable usada para la conexión con la base de datos
     public static EntityManager em;
     @Override
     public void start(Stage stage) throws IOException {
@@ -37,6 +38,7 @@ public class App extends Application {
         
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
+        stage.setTitle("Anime");
         stage.show();
         
         Anime a = new Anime(0, "Jujutsu Kaisen", "MAPPA");
