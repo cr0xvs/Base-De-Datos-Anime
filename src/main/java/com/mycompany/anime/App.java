@@ -1,6 +1,5 @@
 package com.mycompany.anime;
 
-import com.mycompany.anime.entidad.Anime;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +11,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 import java.util.logging.Level;
+import static javafx.application.Application.launch;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -23,15 +23,16 @@ import javax.persistence.PersistenceException;
 public class App extends Application {
 
     private static Scene scene;
-    //Variable usada para la conexión con la base de datos
+    // Variable usada para la conexión con la base de datos
     public static EntityManager em;
+    public static FXMLLoader fxmlLoader;
     @Override
     public void start(Stage stage) throws IOException {
         // Conexión con la base de datos
         try{
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("Anime");
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("AnimePU");
             em = emf.createEntityManager();
-        } catch(PersistenceException ex){
+        } catch(PersistenceException ex) {
             Logger.getLogger(App.class.getName()).log(Level.WARNING, ex.getMessage(),ex);
         }
         
@@ -41,11 +42,8 @@ public class App extends Application {
         stage.setTitle("Anime");
         stage.show();
         
-        Anime a = new Anime(0, "Jujutsu Kaisen", "MAPPA");
-        em.getTransaction().begin();
-        em.persist(a);
-        em.getTransaction().commit();
     }
+    // Apagar la Base de Datos
     @Override
     public void stop() throws Exception{
         em.close();
@@ -56,16 +54,17 @@ public class App extends Application {
     }
     
     
-    
+    // Para que se muestre en pantalla el FXML creado
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
-
+    
+    // Para cargar el FXML creado
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
-
+    
     public static void main(String[] args) {
         launch();
     }

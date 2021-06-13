@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.mycompany.anime.entidad.Genero</class>
     <class>com.mycompany.anime.entidad.Anime</class>
+    <class>com.mycompany.anime.entidad.Estudio</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby:BDAnime;create=true"/>
       <property name="javax.persistence.jdbc.user" value="APP"/>

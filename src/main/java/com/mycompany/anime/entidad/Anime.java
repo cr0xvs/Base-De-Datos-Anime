@@ -5,56 +5,70 @@
  */
 package com.mycompany.anime.entidad;
 
+import com.mycompany.anime.entidad.Estudio;
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
- * @author 1DAW08
+ * @author crisd
  */
-@javax.persistence.Entity
-@javax.persistence.Table(name = "ANIME")
-@javax.persistence.NamedQueries({
-    @javax.persistence.NamedQuery(name = "Anime.findAll", query = "SELECT a FROM Anime a"),
-    @javax.persistence.NamedQuery(name = "Anime.findById", query = "SELECT a FROM Anime a WHERE a.id = :id"),
-    @javax.persistence.NamedQuery(name = "Anime.findByNombre", query = "SELECT a FROM Anime a WHERE a.nombre = :nombre"),
-    @javax.persistence.NamedQuery(name = "Anime.findByEstudio", query = "SELECT a FROM Anime a WHERE a.estudio = :estudio"),
-    @javax.persistence.NamedQuery(name = "Anime.findByFechaLanzamiento", query = "SELECT a FROM Anime a WHERE a.fechaLanzamiento = :fechaLanzamiento"),
-    @javax.persistence.NamedQuery(name = "Anime.findByNumTemporadas", query = "SELECT a FROM Anime a WHERE a.numTemporadas = :numTemporadas"),
-    @javax.persistence.NamedQuery(name = "Anime.findByCapitulos", query = "SELECT a FROM Anime a WHERE a.capitulos = :capitulos"),
-    @javax.persistence.NamedQuery(name = "Anime.findByEstado", query = "SELECT a FROM Anime a WHERE a.estado = :estado"),
-    @javax.persistence.NamedQuery(name = "Anime.findByFavorito", query = "SELECT a FROM Anime a WHERE a.favorito = :favorito"),
-    @javax.persistence.NamedQuery(name = "Anime.findByImagen", query = "SELECT a FROM Anime a WHERE a.imagen = :imagen")})
+@Entity
+@Table(name = "ANIME")
+@NamedQueries({
+    @NamedQuery(name = "Anime.findAll", query = "SELECT a FROM Anime a"),
+    @NamedQuery(name = "Anime.findById", query = "SELECT a FROM Anime a WHERE a.id = :id"),
+    @NamedQuery(name = "Anime.findByNombre", query = "SELECT a FROM Anime a WHERE a.nombre = :nombre"),
+    @NamedQuery(name = "Anime.findByGenero", query = "SELECT a FROM Anime a WHERE a.genero = :genero"),
+    @NamedQuery(name = "Anime.findByFechaLanzamiento", query = "SELECT a FROM Anime a WHERE a.fechaLanzamiento = :fechaLanzamiento"),
+    @NamedQuery(name = "Anime.findByNumTemporadas", query = "SELECT a FROM Anime a WHERE a.numTemporadas = :numTemporadas"),
+    @NamedQuery(name = "Anime.findByCapitulos", query = "SELECT a FROM Anime a WHERE a.capitulos = :capitulos"),
+    @NamedQuery(name = "Anime.findByEstado", query = "SELECT a FROM Anime a WHERE a.estado = :estado"),
+    @NamedQuery(name = "Anime.findByFavorito", query = "SELECT a FROM Anime a WHERE a.favorito = :favorito"),
+    @NamedQuery(name = "Anime.findByImagen", query = "SELECT a FROM Anime a WHERE a.imagen = :imagen")})
 public class Anime implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @javax.persistence.Id
-    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
-    @javax.persistence.Basic(optional = false)
-    @javax.persistence.Column(name = "ID")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "ID")
     private Integer id;
-    @javax.persistence.Basic(optional = false)
-    @javax.persistence.Column(name = "NOMBRE")
+    @Basic(optional = false)
+    @Column(name = "NOMBRE")
     private String nombre;
-    @javax.persistence.Basic(optional = false)
-    @javax.persistence.Column(name = "ESTUDIO")
-    private String estudio;
-    @javax.persistence.Column(name = "FECHA_LANZAMIENTO")
-    @javax.persistence.Temporal(javax.persistence.TemporalType.DATE)
+    @Basic(optional = false)
+    @Column(name = "GENERO")
+    private String genero;
+    @Column(name = "FECHA_LANZAMIENTO")
+    @Temporal(TemporalType.DATE)
     private Date fechaLanzamiento;
-    @javax.persistence.Column(name = "NUM_TEMPORADAS")
-    private Short numTemporadas;
-    @javax.persistence.Column(name = "CAPITULOS")
-    private Short capitulos;
-    @javax.persistence.Column(name = "ESTADO")
+    @Column(name = "NUM_TEMPORADAS")
+    private Integer numTemporadas;
+    @Column(name = "CAPITULOS")
+    private Integer capitulos;
+    @Column(name = "ESTADO")
     private String estado;
-    @javax.persistence.Column(name = "FAVORITO")
+    @Column(name = "FAVORITO")
     private Boolean favorito;
-    @javax.persistence.Column(name = "IMAGEN")
+    @Column(name = "IMAGEN")
     private String imagen;
-    @javax.persistence.JoinColumn(name = "GENERO", referencedColumnName = "ID")
-    @javax.persistence.ManyToOne
-    private Genero genero;
+    @JoinColumn(name = "ESTUDIO", referencedColumnName = "ID")
+    @ManyToOne
+    private Estudio estudio;
 
     public Anime() {
     }
@@ -63,10 +77,10 @@ public class Anime implements Serializable {
         this.id = id;
     }
 
-    public Anime(Integer id, String nombre, String estudio) {
+    public Anime(Integer id, String nombre, String genero) {
         this.id = id;
         this.nombre = nombre;
-        this.estudio = estudio;
+        this.genero = genero;
     }
 
     public Integer getId() {
@@ -85,12 +99,12 @@ public class Anime implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getEstudio() {
-        return estudio;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setEstudio(String estudio) {
-        this.estudio = estudio;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     public Date getFechaLanzamiento() {
@@ -101,19 +115,19 @@ public class Anime implements Serializable {
         this.fechaLanzamiento = fechaLanzamiento;
     }
 
-    public Short getNumTemporadas() {
+    public Integer getNumTemporadas() {
         return numTemporadas;
     }
 
-    public void setNumTemporadas(Short numTemporadas) {
+    public void setNumTemporadas(Integer numTemporadas) {
         this.numTemporadas = numTemporadas;
     }
 
-    public Short getCapitulos() {
+    public Integer getCapitulos() {
         return capitulos;
     }
 
-    public void setCapitulos(Short capitulos) {
+    public void setCapitulos(Integer capitulos) {
         this.capitulos = capitulos;
     }
 
@@ -141,12 +155,12 @@ public class Anime implements Serializable {
         this.imagen = imagen;
     }
 
-    public Genero getGenero() {
-        return genero;
+    public Estudio getEstudio() {
+        return estudio;
     }
 
-    public void setGenero(Genero genero) {
-        this.genero = genero;
+    public void setEstudio(Estudio estudio) {
+        this.estudio = estudio;
     }
 
     @Override
@@ -171,7 +185,7 @@ public class Anime implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.anime.entities.Anime[ id=" + id + " ]";
+        return "com.mycompany.anime.entidad.Anime[ id=" + id + " ]";
     }
     
 }

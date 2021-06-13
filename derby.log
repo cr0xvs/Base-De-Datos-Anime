@@ -1,4 +1,4 @@
-Thu Jun 10 13:39:15 CEST 2021 Thread[JavaFX Application Thread,5,main] Cleanup action starting
+Sat Jun 12 04:01:02 CEST 2021 Thread[JavaFX Application Thread,5,main] Cleanup action starting
 java.sql.SQLException: XJ040.C : [0] BDAnime, [1] jdk.internal.loader.ClassLoaders$AppClassLoader@2dda6444
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
@@ -42,7 +42,7 @@ Caused by: ERROR XJ040: XJ040.C : [0] BDAnime, [1] jdk.internal.loader.ClassLoad
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
 	... 36 more
-Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects\Anime\BDAnime
+Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\crisd\OneDrive\Documentos\NetBeansProjects\Base-De-Datos-Anime\BDAnime
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:295)
 	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(BaseDataFileFactory.java:1949)
@@ -92,7 +92,7 @@ Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects
 	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(EmbedConnection.java:2816)
 	... 33 more
 ============= begin nested exception, level (1) ===========
-java.sql.SQLException: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects\Anime\BDAnime
+java.sql.SQLException: XSDB6.D : [0] C:\Users\crisd\OneDrive\Documentos\NetBeansProjects\Base-De-Datos-Anime\BDAnime
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:230)
 	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(EmbedConnection.java:2853)
@@ -129,7 +129,7 @@ java.sql.SQLException: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects\
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects\Anime\BDAnime
+Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\crisd\OneDrive\Documentos\NetBeansProjects\Base-De-Datos-Anime\BDAnime
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:295)
 	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(BaseDataFileFactory.java:1949)
@@ -180,7 +180,7 @@ Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects
 	... 33 more
 ============= end nested exception, level (1) ===========
 ============= begin nested exception, level (2) ===========
-ERROR XSDB6: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects\Anime\BDAnime
+ERROR XSDB6: XSDB6.D : [0] C:\Users\crisd\OneDrive\Documentos\NetBeansProjects\Base-De-Datos-Anime\BDAnime
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:295)
 	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(BaseDataFileFactory.java:1949)
@@ -263,7 +263,7 @@ ERROR XSDB6: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects\Anime\BDAn
 	at java.base/java.lang.Thread.run(Thread.java:832)
 ============= end nested exception, level (2) ===========
 Cleanup action completed
-Thu Jun 10 13:39:15 CEST 2021 Thread[JavaFX Application Thread,5,main] Cleanup action starting
+Sat Jun 12 04:01:02 CEST 2021 Thread[JavaFX Application Thread,5,main] Cleanup action starting
 java.sql.SQLException: XJ040.C : [0] BDAnime, [1] jdk.internal.loader.ClassLoaders$AppClassLoader@2dda6444
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
@@ -306,7 +306,7 @@ Caused by: ERROR XJ040: XJ040.C : [0] BDAnime, [1] jdk.internal.loader.ClassLoad
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
 	... 35 more
-Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects\Anime\BDAnime
+Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\crisd\OneDrive\Documentos\NetBeansProjects\Base-De-Datos-Anime\BDAnime
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:295)
 	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(BaseDataFileFactory.java:1949)
@@ -356,7 +356,7 @@ Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects
 	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(EmbedConnection.java:2816)
 	... 32 more
 ============= begin nested exception, level (1) ===========
-java.sql.SQLException: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects\Anime\BDAnime
+java.sql.SQLException: XSDB6.D : [0] C:\Users\crisd\OneDrive\Documentos\NetBeansProjects\Base-De-Datos-Anime\BDAnime
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:230)
 	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(EmbedConnection.java:2853)
@@ -392,7 +392,7 @@ java.sql.SQLException: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects\
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
 	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects\Anime\BDAnime
+Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\crisd\OneDrive\Documentos\NetBeansProjects\Base-De-Datos-Anime\BDAnime
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:295)
 	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(BaseDataFileFactory.java:1949)
@@ -443,7 +443,7 @@ Caused by: ERROR XSDB6: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects
 	... 32 more
 ============= end nested exception, level (1) ===========
 ============= begin nested exception, level (2) ===========
-ERROR XSDB6: XSDB6.D : [0] C:\Users\1DAW08\Documents\NetBeansProjects\Anime\BDAnime
+ERROR XSDB6: XSDB6.D : [0] C:\Users\crisd\OneDrive\Documentos\NetBeansProjects\Base-De-Datos-Anime\BDAnime
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
 	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:295)
 	at org.apache.derby.impl.store.raw.data.BaseDataFileFactory.privGetJBMSLockOnDB(BaseDataFileFactory.java:1949)
